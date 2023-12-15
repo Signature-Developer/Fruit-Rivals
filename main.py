@@ -15,7 +15,10 @@ server.connect((socket.gethostname(), 55555))
 
 # TESTING SERVER CONNECTION
 TEST_DATA = server.recv(1024).decode()
-cprint(f"RECIEVED :: {TEST_DATA}", "light_yellow")
+cprint(f"RECIEVED :: {TEST_DATA}", "light_green")
+
+TEST_SENDING_DATA = "All ok from client side"
+server.send(TEST_SENDING_DATA.encode())
 
 #! EVENT HANDLER !
 while True:
